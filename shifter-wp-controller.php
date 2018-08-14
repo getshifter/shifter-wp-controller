@@ -9,12 +9,6 @@ Author URI: https://getshifter.io
 License: GPL2
 */
 
-/*
- * Shifter API
- */
-
-require("api/shifter-api.php");
-
 // /*
 //  * CSS Styles
 //  * Admin and Front-End
@@ -99,18 +93,9 @@ function add_shifter_support() {
 }
 
 /*
- * Admin Dashboard Widget
+ * Controller Functions
  *
  */
-
-add_action("wp_dashboard_setup", "add_shifter_diag");
-function add_shifter_diag() {
-  wp_add_dashboard_widget("shifter_app_diag", "Shifter", "add_shifter_diag_contents");
-}
-
-function add_shifter_diag_contents() {
-  include("diag/diag.php");
-}
 
 add_action("wp_ajax_shifter_app_terminate", "shifter_app_terminate");
 function shifter_app_terminate() {
