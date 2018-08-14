@@ -9,6 +9,15 @@ Author URI: https://getshifter.io
 License: GPL2
 */
 
+/*
+ * Shifter WP API
+ * Check if Shifter WordPress Plugin API Plugin Exists
+ */
+
+if (!class_exists('Shifter_API')) {
+  return;
+}
+
 // /*
 //  * CSS Styles
 //  * Admin and Front-End
