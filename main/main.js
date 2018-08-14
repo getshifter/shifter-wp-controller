@@ -1,4 +1,4 @@
-// CAll Function
+// Handler
 function call_shifter_operation(action) {
   jQuery.ajax({
     method: "POST",
