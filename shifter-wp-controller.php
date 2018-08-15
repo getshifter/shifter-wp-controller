@@ -3,7 +3,7 @@
 Plugin Name: Shifter WP Controller
 Plugin URI: https://github.com/getshifter/shifter-wp-controller
 Description: Shifter controls from the WordPress Dashboard.
-Version: 1.1.7
+Version: 0.1.0
 Author: DigitalCube
 Author URI: https://getshifter.io
 License: GPL2
