@@ -16,11 +16,11 @@ function terminate_app() {
     swal({
       title: 'Are you sure?',
       text: "Confirm to power down your Shifter app.",
-      type: 'warning',
+      padding: '3em',
       showCancelButton: true,
       confirmButtonColor: '#bc4e9c',
       cancelButtonColor: '#333',
-      confirmButtonText: 'Terminate'
+      confirmButtonText: 'Terminate',
     })
     .then((result) => {
       if (result.value) {
@@ -41,11 +41,11 @@ function generate_artifact() {
   swal({
     title: 'Generate Artifact?',
     text: "While generating an Artifact you will not be able to access your WordPress app.",
-    type: 'info',
     showCancelButton: true,
     confirmButtonColor: '#bc4e9c',
     cancelButtonColor: '#333',
-    confirmButtonText: 'Generate'
+    confirmButtonText: 'Generate',
+    padding: '3em'
   })
   .then((result) => {
     if (result.value) {
