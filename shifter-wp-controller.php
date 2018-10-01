@@ -71,34 +71,34 @@ function add_shifter_support() {
   $local_class = getenv("SHIFTER_LOCAL") ? "disable_shifter_operation" : "";
   $api = new Shifter_API;
   global $wp_admin_bar;
-  $shifter_support = array(
-    "id" => "shifter_support",
-    "title" => '<span id="shifter-support-top-menu">Shifter</span>'
-  );
+
   $shifter_support_back_to_shifter_dashboard = array(
     "id"    => "shifter_support_back_to_shifter_dashboard",
-    "title" => "Back to Shifter Dashboard",
-    "parent" => "shifter_support",
-    "href" => $api->shifter_dashboard_url
+    "title" => "Shifter Dashboard <span style='font-family: dashicons; position: relative; top:-2px' class='dashicons dashicons-external'></span>",
+    "parent" => "shifter",
+    "href" => $api->shifter_dashboard_url,
+    "meta" => array("target" => '_blank', "rel" => 'nofollow noopener noreferrer')
   );
+
   $shifter_support_terminate = array(
     "id"    => "shifter_support_terminate",
-    "title" => "Terminate app",
-    "parent" => "shifter_support",
+    "title" => "Terminate App",
+    "parent" => "shifter",
     "href" => "#",
     "meta" => array("class" => $local_class)
   );
+
   $shifter_support_generate = array(
     "id"    => "shifter_support_generate",
-    "title" => "Generate artifact",
-    "parent" => "shifter_support",
+    "title" => "Generate Artifact",
+    "parent" => "shifter",
     "href" => "#",
     "meta" => array("class" => $local_class)
   );
-  $wp_admin_bar->add_menu($shifter_support);
+
   $wp_admin_bar->add_menu($shifter_support_back_to_shifter_dashboard);
-  $wp_admin_bar->add_menu($shifter_support_terminate);
   $wp_admin_bar->add_menu($shifter_support_generate);
+  $wp_admin_bar->add_menu($shifter_support_terminate);
 }
 
 /*
