@@ -3,7 +3,7 @@
 Plugin Name: Shifter WP Controller
 Plugin URI: https://github.com/getshifter/shifter-wp-controller
 Description: Shifter controls from the WordPress Dashboard.
-Version: 0.1.1
+Version: 0.1.0
 Author: DigitalCube
 Author URI: https://getshifter.io
 License: GPL2
@@ -16,10 +16,6 @@ License: GPL2
 
 if (!class_exists('Shifter_API')) {
   return;
-}
-
-function shifter_icon() {
-  return "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAB3RJTUUH4QUQCAwVRk5ANwAAAeFJREFUOMu9lEFIVEEYx38zs7LiQSja7BAaHcIoaqGDslFIyEadYusU0cki6yAaBV0FD8kSBGlLeVEwIcgkKMukDmEYLLXtJamI7dihQ0Qs+t73psM+t0V9vidI32mGmfl98/2/+Y/Cj9nMSN6IHIiJgxEHI+6ftplrW9hgxGrGFqgLWIscmk2OWqDajGS1ZS0A5RpwGeBDR7824hITB+05Xut8llLystKeKCNuRW/XVUpZ2fZlogKczYzQOdl1LiBpCYgD9aAO+vMe4Ea1Mq0KWDkO2BhA52QXr07dw3jSqj25YMTJp6Z7J/wDiQoMwC7L0ABs93lvEp/H06t0OjZ1EavUDNAHPHiXzu6PINnXHQujR3/sPR8ofKL6hpRKhMB+WaP3ATR9GgsAWo4Aj4Du9hdXX68D+yi6fuvO4v2l9bpMx5NLeeAMwNsTt0hN961J21UYflpKXtnYww6C/YMO/R+nRPHruO/xOuB32OaVdmPu5G2lrBf3fxyMuN6yU4y4uuoOcW1zMbcY5YaNvg3jIRf5BhyKAiz7TmgMqe5hpKYcftazhGUwBOY1F3M3I3c59bx3AMvjtVkWqzgN8D3ZHQ04n87S9vJ6BjgLzAGLFn4COWDP7vd3pgBaCndXnf0LIlef9HGSOIAAAAAASUVORK5CYII=";
 }
 
 // /*
@@ -75,16 +71,6 @@ function add_shifter_support() {
   $local_class = getenv("SHIFTER_LOCAL") ? "disable_shifter_operation" : "";
   $api = new Shifter_API;
   global $wp_admin_bar;
-  $shifter_top_menu = '
-    <span class="ab-icon">
-      <img src="'.shifter_icon().'" alt="Shifter Icon" />
-    </span>
-    <span class="ab-label">Shifter</span>';
-
-    $shifter_support = array(
-      "id" => "shifter_support",
-      "title" => $shifter_top_menu
-    );
 
   $shifter_support_back_to_shifter_dashboard = array(
     "id"    => "shifter_support_back_to_shifter_dashboard",
