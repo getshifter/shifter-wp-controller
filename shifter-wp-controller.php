@@ -25,10 +25,11 @@ if (!class_exists('Shifter_API')) {
 
 add_action('wp_enqueue_scripts', 'add_shifter_support_css' );
 add_action('admin_enqueue_scripts', 'add_shifter_support_css' );
+
 function add_shifter_support_css() {
 
-  // $shifter_css = plugins_url( 'src/css/main.css', __FILE__ );
-  // wp_register_style("shifter-support", $shifter_css);
+  wp_register_style("shifter-wp-controller", plugins_url( '/src/css/main.css', __FILE__ ));
+  wp_enqueue_style("shifter-wp-controller");
 
   wp_register_style("sweetalert2", "https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.26.11/sweetalert2.min.css");
 
