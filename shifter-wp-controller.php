@@ -28,13 +28,12 @@ add_action('admin_enqueue_scripts', 'add_shifter_support_css' );
 
 function add_shifter_support_css() {
 
-  wp_register_style("shifter-wp-controller", plugins_url( '/src/css/main.css', __FILE__ ));
-  wp_enqueue_style("shifter-wp-controller");
-
+  wp_register_style("shifter-wp-controller", plugins_url( '/main/main.css', __FILE__ ));
   wp_register_style("sweetalert2", "https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.26.11/sweetalert2.min.css");
 
   if (is_user_logged_in()) {
     wp_enqueue_style("sweetalert2");
+    wp_enqueue_style("shifter-wp-controller");
   }
 }
 

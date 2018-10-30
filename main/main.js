@@ -18,7 +18,7 @@ function terminate_app() {
       text: "Confirm to power down your Shifter app.",
       padding: '3em',
       showCancelButton: true,
-      confirmButtonColor: '#bc4e9c',
+      confirmButtonColor: 'transparent',
       cancelButtonColor: '#333',
       confirmButtonText: 'Terminate',
     })
