@@ -117,3 +117,12 @@ function shifter_app_generate() {
   $api = new Shifter_API;
   return $api->generate_wp_app();
 }
+
+// Redirect to Shifter Dashboard
+function shifter_wp_admin_redirect() {
+     
+  wp_redirect( home_url() ); exit;
+   
+}
+
+shifter_wp_admin_redirect();
